@@ -1,6 +1,8 @@
 import './style/App.css';
 import Main from './pages/Main.js';
+import LoginPage from './pages/LoginPage.jsx'
 import NotFoundPage from './pages/NotFoundPage.js'
+import AdminPage from './pages/AdminPage.jsx';
 
 import {
   BrowserRouter as Router,
@@ -14,6 +16,9 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/admin" element={<AdminPage />} />
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>

@@ -6,12 +6,10 @@ function DataFetcher() {
   const [message, setMessage] = useState('Загрузка...');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api').then(response => {
+    axios.get('http://localhost:5000/api/data').then(response => {
 
-
-
-        // 2. Устанавливаем полученное сообщение
         setMessage(response.data.messages); 
+
       }).catch(error => {
         console.error('Ошибка при получении данных от Flask:', error);
         setMessage('Ошибка: не удалось подключиться к бэкенду.');
@@ -21,7 +19,18 @@ function DataFetcher() {
   return message;
 }
 
+
+function handleSubmit(){
+  const dataToSend = {login: "loginn"}
+  try {
+    const response = axios.post('http://localhost:5000/api/login', dataToSend);
+    console.log('Data submitted successfully:', response.data);
+  } catch (error) {
+    console.error('Error submitting data:', error);
+}};
+
 function Main(){
+  handleSubmit();
     let message = DataFetcher();
     return (
     <div>

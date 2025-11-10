@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4; /* Легкий фон для контраста */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+/* Стили для полей ввода (инпутов) */
+input {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: white; /* Белый фон */
+  color: #333;
+  border: 1px solid black; /* Черная граница */
+  border-radius: 8px; /* Закругленные углы */
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #d90000; /* Подсветка красным при фокусе */
+}
+
+/* Стили для кнопки */
+.button {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  
+  /* Основное состояние: Красный фон, белый текст, без границы */
+  background-color: #d90000; 
+  color: white; 
+  border: 1px solid #d90000;
+  border-radius: 8px; /* Закругленные углы */
+  transition: all 0.3s ease;
+}
+
+/* Стили кнопки при наведении (hover) */
+.button:hover {
+  /* Состояние при наведении: Белый фон, красный текст, красная граница */
+  background-color: white;
+  color: #d90000;
+  border: 1px solid #d90000;
+}
