@@ -1,41 +1,20 @@
 import React, { Component, useState, useEffect } from 'react';
 import axios from 'axios';
+import HeaderMain from '../components/HeaderMain';
+import FooterMain from '../components/FooterMain';
+import Catalog from '../components/Catalog';
+import '../style/Main.css';
 
 
-function DataFetcher() {
-  const [message, setMessage] = useState('Загрузка...');
-
-  useEffect(() => {
-    axios.get('http://localhost:5000/api/data').then(response => {
-
-        setMessage(response.data.messages); 
-
-      }).catch(error => {
-        console.error('Ошибка при получении данных от Flask:', error);
-        setMessage('Ошибка: не удалось подключиться к бэкенду.');
-      });
-  }, []); // Пустой массив зависимостей гарантирует, что запрос выполнится только один раз
-
-  return message;
-}
-
-
-function handleSubmit(){
-  const dataToSend = {login: "loginn"}
-  try {
-    const response = axios.post('http://localhost:5000/api/login', dataToSend);
-    console.log('Data submitted successfully:', response.data);
-  } catch (error) {
-    console.error('Error submitting data:', error);
-}};
 
 function Main(){
-  handleSubmit();
-    let message = DataFetcher();
+    
     return (
-    <div>
-        <h1>Main_Page </h1>
-        {message}
+    <div className="wrapper">
+      <HeaderMain/>
+      <h1>Main_Page </h1>
+      <Catalog/>
+      <FooterMain/>
     </div>
     )
 }

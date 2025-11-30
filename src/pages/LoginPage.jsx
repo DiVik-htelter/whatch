@@ -8,6 +8,7 @@ function LoginPage() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   let token = '';
+
   // 2. Обработчик отправки формы
   const handleSubmit = async (event) => {
     let milliseconds = Date.now();
@@ -23,7 +24,6 @@ function LoginPage() {
       login: username,
       password: password
     };
-
     try {
       const response = await axios.post('http://localhost:5000/api/login', dataToSend);
       console.log('Data submitted successfully:', response.data);
@@ -33,7 +33,10 @@ function LoginPage() {
         navigate(response.data.redirect_to);
         token = response.data.token;
         localStorage.setItem('token',token); // отправка токена в localStoreg
-        console.log('Токен отправленый в localStorage:', token)
+        console.log('Токен отправленый в localStorage:', token) 
+      } else {
+        console.log('Неправильные данные')
+        alert('Неправильный логин или пароль')
       }
 
     } catch (error) {
