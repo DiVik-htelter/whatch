@@ -51,24 +51,17 @@ def chekToken():
   else: return {'authorization': False}, 200
 
 
-@app.route('/api/data')
-def get_data():
-  data={
-    "messages": "Прив, бро"
-
-  }
-  return data
-
 # API для работы с часами
+
 @app.route('/api/watches', methods=['GET'])
 def get_watches():
-  # Получение всех моделей часов
+  """Получение всех моделей часов"""
   all_watches = watches_data.get_all_watches()
   return jsonify(all_watches)
 
 @app.route('/api/watches/<watch_id>', methods=['GET'])
 def get_watch(watch_id):
-  # Получение конкретной модели часов по ID
+  """Получение конкретной модели часов по ID"""
   watch = watches_data.get_watch_by_id(watch_id)
   if watch:
     return jsonify(watch)
@@ -77,7 +70,7 @@ def get_watch(watch_id):
 
 @app.route('/api/watches', methods=['POST'])
 def add_watch():
-  # Проверяем токен для авторизации
+  """Проверяем токен для авторизации"""
   auth_header = request.headers.get('Authorization')
   if not auth_header or auth_header != f'Bearer {token}':
     return jsonify({"error": "Unauthorized"}), 401

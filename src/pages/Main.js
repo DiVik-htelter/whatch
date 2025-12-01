@@ -12,7 +12,6 @@ function Main(){
     return (
     <div className="wrapper">
       <HeaderMain/>
-      <h1>Main_Page </h1>
       <Catalog/>
       <FooterMain/>
     </div>
