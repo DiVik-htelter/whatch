@@ -3,7 +3,6 @@ import axios from "axios";
 import '../style/Catalog.css'
 
 
-//Здесь должна быть логика подгрузки списка часов из БД и провильная вставка их в таблицу
 function Catalog(){
 
   const [watches, setWatches] = useState([])
@@ -17,7 +16,7 @@ function Catalog(){
       console.error('Ошибка при загрузке часов:', e);
     }
   };
-
+    // Загрузка каталога при загрузке страницы
   fetchWatches(); 
 },[]);
   
@@ -61,13 +60,14 @@ function Catalog(){
 
       <div className="catalog-item">
         <a href="item.html" className="item-click">
-          <img src="/img/item1.png" alt="" srcset="" className="img_item"/>
+          <img src="../img/images.png" alt="" srcset="" className="img_item"/>
           <label className="item-name">ЧАСЫ СЛАВА ИНСТИНКТ 6239485/2025</label>
           <label for="" className="prise">5 863р</label>
         </a>  
           <input type="button" value="Купить" className="button-pay" id="b-pay" onclick="alert_stop()"/>
         <a href="#" className="compaer">Добавить к сравнению</a>
       </div>
+
       <div className="catalog-item">
         <a href="item.html" className="item-click">
           <img src="/img/item1.png" alt="" srcset="" className="img_item"/>
