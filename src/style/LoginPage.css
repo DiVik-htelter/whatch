@@ -55,3 +55,38 @@ input {
   color: #d90000;
   border: 1px solid #d90000;
 }
+.divider {
+  text-align: center;
+  margin: 20px 0;
+  color: #666;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.yandex-btn {
+  background-color: #ffcc00;
+  color: #000;
+  border: 1px solid #ffcc00;
+}
+
+.yandex-btn:hover {
+  background-color: #ffd633;
+  border-color: #ffd633;
+}

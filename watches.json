@@ -24,11 +24,243 @@
     "id": 3
   },
   {
-    "name": "Часики",
-    "brand": "Детские",
-    "price": "5999",
-    "description": "Нарисованные стоячие",
-    "imgUrl": "https://www.google.ru/url?sa=i&url=https%3A%2F%2Fru.freepik.com%2Fpremium-vector%2Fvector-image-simple-red-watch-child-s-drawing-clock-doodle-style-illustration-children_28214226.htm&psig=AOvVaw0M1j00EzMGVlCbsiBKKDnZ&ust=1764654943777000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCND30oram5EDFQAAAAAdAAAAABAL",
-    "id": 4
+    "name": "Seiko 5 Sports",
+    "brand": "Seiko",
+    "price": "32500",
+    "description": "Автоматические часы с сапфировым стеклом и подсветкой",
+    "imgUrl": "",
+    "id": 5
+  },
+  {
+    "name": "G-Shock GA-2100",
+    "brand": "Casio",
+    "price": "18900",
+    "description": "Ударопрочные аналого-цифровые часы с подсветкой",
+    "imgUrl": "https://example.com/images/gshock_ga2100.jpg",
+    "id": 6
+  },
+  {
+    "name": "Classic Date",
+    "brand": "Tissot",
+    "price": "45500",
+    "description": "Классические кварцевые часы с кожаным ремешком",
+    "imgUrl": "https://example.com/images/tissot_classic.jpg",
+    "id": 7
+  },
+  {
+    "name": "Apple Watch Series 9",
+    "brand": "Apple",
+    "price": "89900",
+    "description": "Умные часы с функцией ЭКГ и отслеживанием сна",
+    "imgUrl": "https://example.com/images/apple_watch_9.jpg",
+    "id": 8
+  },
+  {
+    "name": "Chronograph",
+    "brand": "Fossil",
+    "price": "18700",
+    "description": "Кожаный ремешок, хронограф, три субдиала",
+    "imgUrl": "",
+    "id": 9
+  },
+  {
+    "name": "Speedy Moonwatch",
+    "brand": "Omega",
+    "price": "750000",
+    "description": "Легендарные механические хронографы, побывавшие в космосе",
+    "imgUrl": "https://example.com/images/omega_speedmaster.jpg",
+    "id": 10
+  },
+  {
+    "name": "Submariner",
+    "brand": "Rolex",
+    "price": "1200000",
+    "description": "Культовая дайверская модель, водонепроницаемость 300м",
+    "imgUrl": "https://example.com/images/rolex_submariner.jpg",
+    "id": 11
+  },
+  {
+    "name": "Bambino",
+    "brand": "Orient",
+    "price": "28900",
+    "description": "Элегантные автоматические часы с куполообразным стеклом",
+    "imgUrl": "",
+    "id": 12
+  },
+  {
+    "name": "Classic Petite",
+    "brand": "Anne Klein",
+    "price": "15600",
+    "description": "Женские часы с кристаллами Swarovski и матовым браслетом",
+    "imgUrl": "https://example.com/images/anne_klein_petite.jpg",
+    "id": 13
+  },
+  {
+    "name": "Amazfit GTR 4",
+    "brand": "Huami",
+    "price": "29900",
+    "description": "Умные часы с двухнедельным временем работы",
+    "imgUrl": "https://example.com/images/amazfit_gtr4.jpg",
+    "id": 14
+  },
+  {
+    "name": "Flik Flak",
+    "brand": "Swatch",
+    "price": "4500",
+    "description": "Детские яркие часы, обучающие определению времени",
+    "imgUrl": "",
+    "id": 15
+  },
+  {
+    "name": "Field Mechanical",
+    "brand": "Hamilton",
+    "price": "112000",
+    "description": "Механические полевые часы в военном стиле",
+    "imgUrl": "https://example.com/images/hamilton_field.jpg",
+    "id": 16
+  },
+  {
+    "name": "Dive Master",
+    "brand": "Citizen",
+    "price": "67800",
+    "description": "Профессиональные дайверские часы с Eco-Drive",
+    "imgUrl": "https://example.com/images/citizen_dive.jpg",
+    "id": 17
+  },
+  {
+    "name": "Vintage 1960",
+    "brand": "Poljot",
+    "price": "42500",
+    "description": "Ретро часы с ручным заводом и открытой задней крышкой",
+    "imgUrl": "",
+    "id": 18
+  },
+  {
+    "name": "Classic Fusion",
+    "brand": "Hublot",
+    "price": "950000",
+    "description": "Люксовые часы из керамики и титана",
+    "imgUrl": "https://example.com/images/hublot_fusion.jpg",
+    "id": 19
+  },
+  {
+    "name": "Galaxy Watch6",
+    "brand": "Samsung",
+    "price": "54900",
+    "description": "Смарт-часы с вращающимся безелем и мониторингом здоровья",
+    "imgUrl": "https://example.com/images/samsung_watch6.jpg",
+    "id": 20
+  },
+  {
+    "name": "Наручные кварцевые",
+    "brand": "Vostok",
+    "price": "12500",
+    "description": "Надежные советские часы с секундной стрелкой",
+    "imgUrl": "",
+    "id": 21
+  },
+  {
+    "name": "Radiomir",
+    "brand": "Panerai",
+    "price": "880000",
+    "description": "Большие часы с подстветкой и историческим дизайном",
+    "imgUrl": "https://example.com/images/panerai_radiomir.jpg",
+    "id": 22
+  },
+  {
+    "name": "Sport Chic",
+    "brand": "Michael Kors",
+    "price": "32400",
+    "description": "Женские часы с розовым позолоченным корпусом",
+    "imgUrl": "https://example.com/images/mk_sport.jpg",
+    "id": 23
+  },
+  {
+    "name": "Baby-G",
+    "brand": "Casio",
+    "price": "14300",
+    "description": "Детские противоударные часы с ярким дизайном",
+    "imgUrl": "",
+    "id": 24
+  },
+  {
+    "name": "Carrera",
+    "brand": "Tag Heuer",
+    "price": "450000",
+    "description": "Автоматический хронограф, вдохновленный автоспортом",
+    "imgUrl": "https://example.com/images/tag_carrera.jpg",
+    "id": 25
+  },
+  {
+    "name": "F91W",
+    "brand": "Casio",
+    "price": "2900",
+    "description": "Культовые цифровые часы с будильником и секундомером",
+    "imgUrl": "https://example.com/images/casio_f91w.jpg",
+    "id": 26
+  },
+  {
+    "name": "Presage",
+    "brand": "Seiko",
+    "price": "89000",
+    "description": "Автоматические часы с эмалевым циферблатом",
+    "imgUrl": "",
+    "id": 27
+  },
+  {
+    "name": "Ironman",
+    "brand": "Timex",
+    "price": "12400",
+    "description": "Спортивные часы для триатлона с Indiglo подсветкой",
+    "imgUrl": "https://example.com/images/timex_ironman.jpg",
+    "id": 28
+  },
+  {
+    "name": "Weekender",
+    "brand": "Timex",
+    "price": "9800",
+    "description": "Минималистичные часы со сменными ремешками из нейлона",
+    "imgUrl": "https://example.com/images/timex_weekender.jpg",
+    "id": 29
+  },
+  {
+    "name": "Raketa",
+    "brand": "Ракета",
+    "price": "18700",
+    "description": "Механические часы с 24-часовым циферблатом",
+    "imgUrl": "",
+    "id": 30
+  },
+  {
+    "name": "Pilot Type 20",
+    "brand": "Zenith",
+    "price": "620000",
+    "description": "Авиационные часы с крупными цифрами и заводной головкой",
+    "imgUrl": "https://example.com/images/zenith_pilot.jpg",
+    "id": 31
+  },
+  {
+    "name": "T-Touch",
+    "brand": "Tissot",
+    "price": "145000",
+    "description": "Сенсорные часы с барометром, альтиметром и компасом",
+    "imgUrl": "https://example.com/images/tissot_ttouch.jpg",
+    "id": 32
+  },
+  {
+    "name": "Каминные",
+    "brand": "Молния",
+    "price": "8500",
+    "description": "Настольные часы с маятником и боем",
+    "imgUrl": "",
+    "id": 33
+  },
+  {
+    "name": "NATO",
+    "brand": "Komandirskie",
+    "price": "11200",
+    "description": "Водонепроницаемые часы с ремешком типа NATO",
+    "imgUrl": "https://example.com/images/komandirskie_nato.jpg",
+    "id": 34
   }
 ]

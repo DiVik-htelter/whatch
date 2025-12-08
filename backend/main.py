@@ -1,11 +1,14 @@
-from flask import Flask, request, jsonify, redirect
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import json
 import adminInfo
 import watches_data  # Импортируем модуль для работы с данными часов
+import requests  # Добавьте эту строку для работы с HTTP запросами
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
+
+static_folder = '..\src\img'
 
 # импорт json и перевод его в строку 
 adminStr = json.loads(json.dumps(adminInfo.adminJson))
@@ -14,12 +17,18 @@ loginAdmin = adminStr['login']
 passwordAdmin = adminStr['password']
 token = 'NoNameToken'
 
+# Конфигурация Яндекс OAuth
+YANDEX_CLIENT_ID = '02d8da195df945fdbb9a4fbe55f58a33'
+YANDEX_CLIENT_SECRET = '0c2470aa0a2a4db3b311bb96cf7586bd'
+YANDEX_REDIRECT_URI = 'http://localhost:3000/auth/yandex/callback'
 
-@app.route('/')
-def hello():
-  return 'hello_world'
 
-@app.route('/api/login', methods=['POST'])
+@app.route('/api/img')
+def getImg():
+  global static_folder
+  return send_from_directory(static_folder,'images.png')
+
+@app.route('/api/login', methods=['POST']) 
 def chekLogin():
   dataJson = json.dumps(request.get_json()) # получение данных запроса
   print(dataJson)
@@ -39,6 +48,65 @@ def chekLogin():
   except Exception as e:
     print(e)
 
+# Новый endpoint для авторизации через Яндекс
+@app.route('/api/yandex-auth', methods=['POST'])
+def yandex_auth():
+    try:
+        # Получаем код авторизации от фронтенда
+        code = request.json.get('code')
+        
+        if not code:
+            return jsonify({'success': False, 'error': 'No code provided'}), 400
+        
+        # Обменяем код на access token у Яндекс
+        token_url = 'https://oauth.yandex.ru/token'
+        token_data = {
+            'grant_type': 'authorization_code',
+            'code': code,
+            'client_id': YANDEX_CLIENT_ID,
+            'client_secret': YANDEX_CLIENT_SECRET
+        }
+        
+        token_response = requests.post(token_url, data=token_data)
+        token_json = token_response.json()
+        
+        if 'access_token' not in token_json:
+            return jsonify({'success': False, 'error': 'Failed to get access token'}), 400
+        
+        access_token = token_json['access_token']
+        
+        # Получаем информацию о пользователе
+        user_info_url = 'https://login.yandex.ru/info'
+        headers = {'Authorization': f'OAuth {access_token}'}
+        user_response = requests.get(user_info_url, headers=headers)
+        user_info = user_response.json()
+        
+        # Здесь можно проверить email пользователя, если нужно
+        # Например, разрешить вход только определенным пользователям
+        user_email = user_info.get('default_email', '')
+        user_id = user_info.get('id', '')
+        
+        # Создаем свой токен для пользователя
+        import time
+        milliseconds = int(time.time() * 1000)
+        
+        # Можно использовать комбинацию user_id и времени для создания токена
+        global token
+        token = str(adminInfo.newToken(milliseconds, f"yandex_{user_id}", "yandex_auth"))
+        
+        return jsonify({
+            'success': True, 
+            'token': token, 
+            'redirect_to': '/admin',
+            'user_info': {
+                'email': user_email,
+                'id': user_id
+            }
+        }), 200
+        
+    except Exception as e:
+        print(f"Yandex auth error: {e}")
+        return jsonify({'success': False, 'error': str(e)}), 500
   
 # запрос на сервер на проверку токена
 @app.route('/api/checktoken', methods=['POST'])

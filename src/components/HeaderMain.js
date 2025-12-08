@@ -1,6 +1,6 @@
 import React from "react";
 import '../style/HeaderMain.css'
-import '../img/logo.png'
+import logo from '../img/logo.png'
 //добавить поиск по странице
 //
 
@@ -15,7 +15,7 @@ function HeaderMain(){
           <div className="categori-list">
             <a href="/" className="profil">
               <div className="categori">
-                <img className="logo" src="../img/logo.png" alt="" srcset=""/>
+                <img className="logo" src={logo} alt="" srcset=""/>
               </div>
             </a>
             <a href="/" className="categori">Наручные</a>

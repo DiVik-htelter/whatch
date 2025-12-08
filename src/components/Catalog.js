@@ -6,18 +6,22 @@ import '../style/Catalog.css'
 function Catalog(){
 
   const [watches, setWatches] = useState([])
-
+  const [watcheImg, setWatcheImg] = useState([])
   useEffect(() => {
   const fetchWatches = async () => {
     try {
       const response = await axios.get('http://localhost:5000/api/watches');
+      const responseImg = await axios.get('http://localhost:5000/api/img');
       setWatches(response.data);
+      setWatcheImg(responseImg);
     } catch (e) {
       console.error('Ошибка при загрузке часов:', e);
     }
+
   };
     // Загрузка каталога при загрузке страницы
   fetchWatches(); 
+  console.log(watcheImg.data)
 },[]);
   
   return (
@@ -46,7 +50,7 @@ function Catalog(){
           <a href="item.html" className="item-click">
               {watch.imgUrl ? (
                         <img src={watch.imgUrl} alt={watch.name} className="img_item" />
-                      ) : ( <img src="" className="img_item" /> )}            
+                      ) : ( <img src={watcheImg.data} className="img_item" /> )}            
             <label className="item-name">{watch.name} {watch.brand}</label>
             <label for="" className="prise">{watch.price}р</label>
           </a>  
@@ -60,7 +64,7 @@ function Catalog(){
 
       <div className="catalog-item">
         <a href="item.html" className="item-click">
-          <img src="../img/images.png" alt="" srcset="" className="img_item"/>
+          <img src={watcheImg} alt="" srcset="" className="img_item"/>
           <label className="item-name">ЧАСЫ СЛАВА ИНСТИНКТ 6239485/2025</label>
           <label for="" className="prise">5 863р</label>
         </a>  

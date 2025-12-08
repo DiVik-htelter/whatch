@@ -8,6 +8,19 @@ function LoginPage() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   let token = '';
+  
+  const YANDEX_CLIENT_ID = '02d8da195df945fdbb9a4fbe55f58a33';
+  const YANDEX_REDIRECT_URI = 'http://localhost:3000/auth/yandex/callback';
+
+    // Функция для авторизации через Яндекс
+  const handleYandexLogin = () => {
+    const state = Math.random().toString(36).substring(7); // Для безопасности
+    localStorage.setItem('yandex_auth_state', state);
+    
+    const yandexAuthUrl = `https://oauth.yandex.ru/authorize?response_type=code&client_id=${YANDEX_CLIENT_ID}&redirect_uri=${encodeURIComponent(YANDEX_REDIRECT_URI)}&state=${state}`;
+    
+    window.location.href = yandexAuthUrl;
+  };
 
   // 2. Обработчик отправки формы
   const handleSubmit = async (event) => {
@@ -46,6 +59,7 @@ function LoginPage() {
 
   return (
     <div className='container'>
+      <script src="https://yastatic.net/s3/passport-sdk/autofill/v1/sdk-suggest-with-polyfills-latest.js"></script>
       <form className='form' onSubmit={handleSubmit}>
         
         <h2>Вход в систему</h2>
@@ -71,6 +85,15 @@ function LoginPage() {
           className='button'
         >
           Войти
+        </button>
+        <div className="divider">или</div>
+
+        <button 
+          type="button" 
+          className='button yandex-btn'
+          onClick={handleYandexLogin}
+        >
+          Войти через Яндекс ID
         </button>
       </form>
     </div>

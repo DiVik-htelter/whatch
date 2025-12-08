@@ -3,6 +3,7 @@ import Main from './pages/Main.js';
 import LoginPage from './pages/LoginPage.jsx'
 import NotFoundPage from './pages/NotFoundPage.js'
 import AdminPage from './pages/AdminPage.jsx';
+import YandexCallback from './components/YandexCallback.js';
 
 import {
   BrowserRouter as Router,
@@ -15,6 +16,7 @@ function App() {
     <Router>
 
       <Routes>
+        <Route path="/auth/yandex/callback" element={<YandexCallback/>}/>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/" element={<Main />} />
         <Route path="/admin" element={<AdminPage />} />
