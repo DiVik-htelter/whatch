@@ -11,7 +11,6 @@ function YandexCallback() {
       const params = new URLSearchParams(location.search);
       const code = params.get('code');
       const state = params.get('state');
-      
       const savedState = localStorage.getItem('yandex_auth_state');
       
       if (state !== savedState) {
@@ -19,7 +18,6 @@ function YandexCallback() {
         navigate('/login');
         return;
       }
-
       if (code) {
         try {
           const response = await axios.post('http://localhost:5000/api/yandex-auth', {
@@ -41,7 +39,6 @@ function YandexCallback() {
         navigate('/login');
       }
     };
-
     handleCallback();
   }, [location, navigate]);
 

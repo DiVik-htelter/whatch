@@ -2,11 +2,15 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import '../style/Catalog.css'
 
+function DynamicImage({ imageUrl }) {
+  return <img src={imageUrl} alt="Изображение" className="img_item"/>;
+};
 
 function Catalog(){
 
   const [watches, setWatches] = useState([])
   const [watcheImg, setWatcheImg] = useState([])
+  
   useEffect(() => {
   const fetchWatches = async () => {
     try {
@@ -47,9 +51,9 @@ function Catalog(){
 
       {watches.map(watch => (
         <div className="catalog-item">
-          <a href="item.html" className="item-click">
+          <a href={watch.id} className="item-click">
               {watch.imgUrl ? (
-                        <img src={watch.imgUrl} alt={watch.name} className="img_item" />
+                        <DynamicImage imageUrl={watch.imgUrl} />
                       ) : ( <img src={watcheImg.data} className="img_item" /> )}            
             <label className="item-name">{watch.name} {watch.brand}</label>
             <label for="" className="prise">{watch.price}р</label>
@@ -64,7 +68,7 @@ function Catalog(){
 
       <div className="catalog-item">
         <a href="item.html" className="item-click">
-          <img src={watcheImg} alt="" srcset="" className="img_item"/>
+          <img src={watcheImg.imgUrt} alt="" srcset="" className="img_item"/>
           <label className="item-name">ЧАСЫ СЛАВА ИНСТИНКТ 6239485/2025</label>
           <label for="" className="prise">5 863р</label>
         </a>  
@@ -74,7 +78,8 @@ function Catalog(){
 
       <div className="catalog-item">
         <a href="item.html" className="item-click">
-          <img src="/img/item1.png" alt="" srcset="" className="img_item"/>
+          <DynamicImage imageUrl={"../img/item1.png"} />
+
           <label className="item-name">ЧАСЫ СЛАВА ИНСТИНКТ 6239485/2025</label>
           <label for="" className="prise">5 863р</label>
         </a>  
@@ -82,7 +87,7 @@ function Catalog(){
         <a href="#" className="compaer">Добавить к сравнению</a>
       </div>      <div className="catalog-item">
         <a href="item.html" className="item-click">
-          <img src="/img/item1.png" alt="" srcset="" className="img_item"/>
+          <img src="../img/item1.png" alt="" srcset="" className="img_item"/>
           <label className="item-name">ЧАСЫ СЛАВА ИНСТИНКТ 6239485/2025</label>
           <label for="" className="prise">5 863р</label>
         </a>  

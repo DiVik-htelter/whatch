@@ -154,6 +154,7 @@ function AdminPage() {
       imgUrl: watch.imgUrl || ''
     });
     setEditMode(true);
+    console.log(editMode)
     setEditId(watch.id);
   };
 
@@ -234,6 +235,75 @@ function AdminPage() {
     );
   }
 
+  const renderEditForm = () => {
+    return (      
+    <div className="watch-form-container">
+        <h2>Редактировать часы</h2>
+        <form onSubmit={handleAddWatch} className="watch-form">
+          <div className="form-group">
+            <label>Название:</label>
+            <input
+              type="text"
+              name="name"
+              value={currentWatch.name}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          
+          <div className="form-group">
+            <label>Бренд:</label>
+            <input
+              type="text"
+              name="brand"
+              value={currentWatch.brand}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          
+          <div className="form-group">
+            <label>Цена:</label>
+            <input
+              type="text"
+              name="price"
+              value={currentWatch.price}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          
+          <div className="form-group">
+            <label>Описание:</label>
+            <textarea
+              name="description"
+              value={currentWatch.description}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          
+          <div className="form-group">
+            <label>URL изображения:</label>
+            <input
+              type="text"
+              name="imgUrl"
+              value={currentWatch.imgUrl}
+              onChange={handleInputChange}
+            />
+          </div>
+          
+          <div className="form-buttons">
+            <button type="submit" className="save-btn">
+              Изменить часы
+            </button>
+          </div>
+        </form>
+        <br/>
+        <br/>
+        {renderCatalog()}
+      </div>)
+  }
   // Рендеринг формы добавления часов
   const renderAddForm = () => {
     // Сбрасываем режим редактирования при переходе на форму добавления
@@ -366,6 +436,8 @@ function AdminPage() {
         return renderCatalog();
       case 'add':
         return renderAddForm();
+      case 'edit':
+        return renderEditForm();
       case 'delete':
         return renderDeleteSection();
       default:
@@ -397,6 +469,14 @@ function AdminPage() {
               onClick={() => setActiveSection('add')}
             >
               Добавить экземпляр
+            </a>
+          </li>
+          <li>
+            <a 
+              className={activeSection === 'edit' ? 'active' : ''}
+              onClick={() => setActiveSection('edit')}
+            >
+              Редактировать экземпляр
             </a>
           </li>
           <li>

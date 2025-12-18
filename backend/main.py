@@ -54,7 +54,6 @@ def yandex_auth():
     try:
         # Получаем код авторизации от фронтенда
         code = request.json.get('code')
-        
         if not code:
             return jsonify({'success': False, 'error': 'No code provided'}), 400
         
@@ -66,7 +65,6 @@ def yandex_auth():
             'client_id': YANDEX_CLIENT_ID,
             'client_secret': YANDEX_CLIENT_SECRET
         }
-        
         token_response = requests.post(token_url, data=token_data)
         token_json = token_response.json()
         
@@ -81,8 +79,6 @@ def yandex_auth():
         user_response = requests.get(user_info_url, headers=headers)
         user_info = user_response.json()
         
-        # Здесь можно проверить email пользователя, если нужно
-        # Например, разрешить вход только определенным пользователям
         user_email = user_info.get('default_email', '')
         user_id = user_info.get('id', '')
         
@@ -90,7 +86,6 @@ def yandex_auth():
         import time
         milliseconds = int(time.time() * 1000)
         
-        # Можно использовать комбинацию user_id и времени для создания токена
         global token
         token = str(adminInfo.newToken(milliseconds, f"yandex_{user_id}", "yandex_auth"))
         
@@ -182,6 +177,7 @@ def delete_watch(watch_id):
     return jsonify(result)
   else:
     return jsonify({"error": "Часы не найдены"}), 404
+
 
 if __name__ == '__main__':
   app.run(debug=True)

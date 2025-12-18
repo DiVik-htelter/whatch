@@ -1,10 +1,10 @@
 [
   {
-    "name": "Андрей",
+    "name": "Casio",
     "brand": "casio",
     "price": "19900",
     "description": "крутые часы",
-    "imgUrl": "",
+    "imgUrl": "../img/logo.png",
     "id": 1
   },
   {
@@ -32,7 +32,7 @@
     "id": 5
   },
   {
-    "name": "G-Shock GA-2100",
+    "name": "G-Shock GA-21000",
     "brand": "Casio",
     "price": "18900",
     "description": "Ударопрочные аналого-цифровые часы с подсветкой",
@@ -120,7 +120,7 @@
     "id": 16
   },
   {
-    "name": "Dive Master",
+    "name": "Dive Master super Ultra",
     "brand": "Citizen",
     "price": "67800",
     "description": "Профессиональные дайверские часы с Eco-Drive",
@@ -170,7 +170,7 @@
   {
     "name": "Sport Chic",
     "brand": "Michael Kors",
-    "price": "32400",
+    "price": "324000",
     "description": "Женские часы с розовым позолоченным корпусом",
     "imgUrl": "https://example.com/images/mk_sport.jpg",
     "id": 23
@@ -240,27 +240,11 @@
     "id": 31
   },
   {
-    "name": "T-Touch",
-    "brand": "Tissot",
-    "price": "145000",
-    "description": "Сенсорные часы с барометром, альтиметром и компасом",
-    "imgUrl": "https://example.com/images/tissot_ttouch.jpg",
-    "id": 32
-  },
-  {
-    "name": "Каминные",
-    "brand": "Молния",
-    "price": "8500",
-    "description": "Настольные часы с маятником и боем",
+    "name": "Часы для людей",
+    "brand": "часы",
+    "price": "9900",
+    "description": "часы",
     "imgUrl": "",
-    "id": 33
-  },
-  {
-    "name": "NATO",
-    "brand": "Komandirskie",
-    "price": "11200",
-    "description": "Водонепроницаемые часы с ремешком типа NATO",
-    "imgUrl": "https://example.com/images/komandirskie_nato.jpg",
-    "id": 34
+    "id": 32
   }
 ]
