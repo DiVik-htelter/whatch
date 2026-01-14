@@ -1,0 +1,22 @@
+@keyframes bounce {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-20px); 
+  }
+}
+
+@media (max-width: 768px) {
+  .not-found-content h1 {
+    font-size: 80px !important;
+  }
+  
+  .not-found-content h2 {
+    font-size: 24px !important;
+  }
+  
+  .not-found-content {
+    padding: 40px 20px !important;
+  }
+}

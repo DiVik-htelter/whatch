@@ -1,3 +1,98 @@
+/* Mobile responsiveness for catalog */
+@media (max-width: 480px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .catalog-item {
+    margin: 10px 5px;
+    padding: 15px;
+  }
+  
+  .img_item {
+    width: 150px;
+    height: 200px;
+  }
+  
+  .item-info {
+    width: 100%;
+  }
+  
+  .button-pay {
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  .container {
+    flex-direction: column;
+    margin: 20px 10px;
+  }
+  
+  .item-photo {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .catalog-item {
+    margin: 15px 10px;
+    padding: 20px;
+  }
+  
+  .img_item {
+    width: 180px;
+    height: 220px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .catalog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .img_item {
+    width: 190px;
+    height: 240px;
+  }
+}
+
+/* Touch-friendly buttons on mobile */
+@media (max-width: 768px) {
+  .button-pay {
+    min-height: 50px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .filter {
+    min-height: 40px;
+    font-size: 16px;
+  }
+}
+
+/* Improved mobile filters */
+@media (max-width: 768px) {
+  .filters {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .filter {
+    margin: 5px;
+  }
+  
+  .block_filters {
+    margin: 10px;
+  }
+}
+
+
 h1{
   /*margin: 0px;*/
   display: flex;
@@ -92,4 +187,46 @@ justify-content: space-around;
   margin-right:15px;
   display: grid;
   align-items: center;
+}
+
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.catalog-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.filter {
+  padding: 8px 16px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+}
+
+.filter:hover {
+  background-color: #e0e0e0;
+  border-color: #d90000;
+}
+
+.filter.active {
+  background-color: #d90000;
+  color: white;
+  border-color: #d90000;
+}
+
+.filter-badge {
+  background-color: #fff3cd;
+  border-color: #ffc107;
+}
+
+.button-pay:hover {
+  background-color: #a00000;
 }

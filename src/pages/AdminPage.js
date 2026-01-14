@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../style/LoginPage.css';
 import '../style/AdminPage.css';
+import link from '../link.js'
+
 
 function AdminPage() {
   // Состояния для аутентификации
@@ -43,7 +45,7 @@ function AdminPage() {
       setToken(storedToken);
       
       try {
-        const response = await axios.post('http://localhost:5000/api/checktoken', {
+        const response = await axios.post(link.b +'/api/checktoken', {
           token: storedToken
         });
         
@@ -51,6 +53,7 @@ function AdminPage() {
           setIsAuth(true);
           // Загружаем данные о часах после успешной аутентификации
           fetchWatches();
+
         } else {
           navigate('/');
         }
@@ -66,8 +69,15 @@ function AdminPage() {
   // Функция для загрузки часов с сервера
   const fetchWatches = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/watches');
-      setWatches(response.data);
+          const response = await axios.get(link.b + '/api/watches'
+             , {headers: {
+              "ngrok-skip-browser-warning": "69420",  // Любая строка
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            }
+          });      
+          setWatches(response.data);
+      console.log(response.data)
     } catch (e) {
       console.error('Ошибка при загрузке часов:', e);
     }
@@ -102,12 +112,12 @@ function AdminPage() {
       
       if (editMode) {
         // Обновление существующих часов
-        await axios.put(`http://localhost:5000/api/watches/${editId}`, currentWatch, config);
+        await axios.put(`${link.b}/api/watches/${editId}`, currentWatch, config);
         setEditMode(false);
         setEditId(null);
       } else {
         // Добавление новых часов
-        await axios.post('http://localhost:5000/api/watches', currentWatch, config);
+        await axios.post(link.b+'/api/watches', currentWatch, config);
       }
       
       // Сбрасываем форму и обновляем список часов
@@ -130,7 +140,7 @@ function AdminPage() {
   const handleDeleteWatch = async (id) => {
     if (window.confirm('Вы уверены, что хотите удалить эту модель часов?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/watches/${id}`, {
+        await axios.delete(`${link.b}/api/watches/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -198,7 +208,9 @@ function AdminPage() {
                 </tr>
               </thead>
               <tbody>
-                {watches.map(watch => (
+                {Array.isArray(watches) ? (
+
+                watches.map(watch => (
                   <tr key={watch.id}>
                     <td>{watch.id}</td>
                     <td>
@@ -226,7 +238,9 @@ function AdminPage() {
                       </button>
                     </td>
                   </tr>
-                ))}
+                ))): (
+                  <div>Данные странного формата</div>
+                )}
               </tbody>
             </table>
           </div>
@@ -399,7 +413,8 @@ function AdminPage() {
                 </tr>
               </thead>
               <tbody>
-                {watches.map(watch => (
+              {Array.isArray(watches) ? (
+                watches.map(watch => (
                   <tr key={watch.id}>
                     <td>{watch.id}</td>
                     <td>
@@ -420,7 +435,10 @@ function AdminPage() {
                       </button>
                     </td>
                   </tr>
-                ))}
+                ))
+                ) : (
+                  <div>Данные не загружены или не в правильном формате</div>
+                )}
               </tbody>
             </table>
           </div>

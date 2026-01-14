@@ -1,10 +1,10 @@
 [
   {
-    "name": "Casio",
+    "name": "Casio Super Ultra",
     "brand": "casio",
     "price": "19900",
     "description": "крутые часы",
-    "imgUrl": "../img/logo.png",
+    "imgUrl": "1.jpg",
     "id": 1
   },
   {
@@ -12,7 +12,7 @@
     "brand": "Дружба",
     "price": "2010",
     "description": "Настенные подвижные ходячие часики",
-    "imgUrl": "https://www.google.ru/url?sa=i&url=https%3A%2F%2Fwww.alltime.ru%2Fblog%2F%3Fpage%3Dpost%26blog%3Dwatchblog%26post_id%3D504&psig=AOvVaw0M1j00EzMGVlCbsiBKKDnZ&ust=1764654943777000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCND30oram5EDFQAAAAAdAAAAABAE",
+    "imgUrl": "2.jpg",
     "id": 2
   },
   {
@@ -20,7 +20,7 @@
     "brand": "Детские",
     "price": "5999",
     "description": "Нарисованные стоячие",
-    "imgUrl": "D:\\4_cours\\7_semmestr\\веб\\whatch\\src\\img\\images.png",
+    "imgUrl": "3.jpg",
     "id": 3
   },
   {
@@ -28,7 +28,7 @@
     "brand": "Seiko",
     "price": "32500",
     "description": "Автоматические часы с сапфировым стеклом и подсветкой",
-    "imgUrl": "",
+    "imgUrl": "4.jpg",
     "id": 5
   },
   {
@@ -36,7 +36,7 @@
     "brand": "Casio",
     "price": "18900",
     "description": "Ударопрочные аналого-цифровые часы с подсветкой",
-    "imgUrl": "https://example.com/images/gshock_ga2100.jpg",
+    "imgUrl": "5.jpg",
     "id": 6
   },
   {
@@ -44,7 +44,7 @@
     "brand": "Tissot",
     "price": "45500",
     "description": "Классические кварцевые часы с кожаным ремешком",
-    "imgUrl": "https://example.com/images/tissot_classic.jpg",
+    "imgUrl": "6.jpg",
     "id": 7
   },
   {
@@ -52,7 +52,7 @@
     "brand": "Apple",
     "price": "89900",
     "description": "Умные часы с функцией ЭКГ и отслеживанием сна",
-    "imgUrl": "https://example.com/images/apple_watch_9.jpg",
+    "imgUrl": "7.jpg",
     "id": 8
   },
   {
@@ -60,7 +60,7 @@
     "brand": "Fossil",
     "price": "18700",
     "description": "Кожаный ремешок, хронограф, три субдиала",
-    "imgUrl": "",
+    "imgUrl": "8.jpg",
     "id": 9
   },
   {
@@ -68,7 +68,7 @@
     "brand": "Omega",
     "price": "750000",
     "description": "Легендарные механические хронографы, побывавшие в космосе",
-    "imgUrl": "https://example.com/images/omega_speedmaster.jpg",
+    "imgUrl": "9.jpg",
     "id": 10
   },
   {
@@ -76,7 +76,7 @@
     "brand": "Rolex",
     "price": "1200000",
     "description": "Культовая дайверская модель, водонепроницаемость 300м",
-    "imgUrl": "https://example.com/images/rolex_submariner.jpg",
+    "imgUrl": "10.jpg",
     "id": 11
   },
   {
@@ -84,7 +84,7 @@
     "brand": "Orient",
     "price": "28900",
     "description": "Элегантные автоматические часы с куполообразным стеклом",
-    "imgUrl": "",
+    "imgUrl": "11.jpg",
     "id": 12
   },
   {
@@ -92,7 +92,7 @@
     "brand": "Anne Klein",
     "price": "15600",
     "description": "Женские часы с кристаллами Swarovski и матовым браслетом",
-    "imgUrl": "https://example.com/images/anne_klein_petite.jpg",
+    "imgUrl": "12.jpg",
     "id": 13
   },
   {

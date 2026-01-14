@@ -1,4 +1,69 @@
+/* Mobile styles for burger menu */
+@media (max-width: 768px) {
+  .burger-menu {
+    position: fixed;
+    display: flex;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: #333;
+  }
+  
+  .menu {
+    display: none;
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  .menu.active {
+    /*position: fixed;*/
+    display: flex;
+  }
+  
+  .categori-list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .categori {
+    margin: 10px 0;
+    padding: 10px;
+  }
+  
+  .profils {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .profil {
+    padding: 10px;
+    margin: 5px 0;
+  }
+  
+  .logo {
+    width: 150px;
+    height: 40px;
+  }
+}
 
+@media (min-width: 769px) {
+  .burger-menu {
+    display: none;
+  }
+  
+  .menu {
+    display: flex;
+  }
+}
 
 header{
   font-family: "Manrope";
@@ -17,11 +82,6 @@ a{
   cursor: pointer;
 }
 
-.menu{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 .screath{
   align-items: center;
 }

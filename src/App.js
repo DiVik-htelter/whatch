@@ -1,10 +1,10 @@
 import './style/App.css';
 import Main from './pages/Main.js';
-import LoginPage from './pages/LoginPage.jsx'
-import NotFoundPage from './pages/NotFoundPage.js'
-import AdminPage from './pages/AdminPage.jsx';
+import LoginPage from './pages/LoginPage.js'
+import NotFoundPage from './pages/NotFoundPage_ux_improved.js'
+import AdminPage from './pages/AdminPage.js';
 import YandexCallback from './components/YandexCallback.js';
-import WatchPage from './pages/WacthPage.js'
+import WatchPage from './pages/WatchPage.js'
 
 import {
   BrowserRouter as Router,
